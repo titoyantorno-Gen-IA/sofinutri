@@ -9,19 +9,16 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   if (!user) redirect('/login')
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
+    <div className="min-h-screen" style={{ background: '#f5f0eb' }}>
+      <header className="bg-white border-b px-6 py-4 flex items-center justify-between" style={{ borderColor: '#cbaca6' }}>
         <div className="flex items-center gap-3">
-          <span className="text-xl font-bold text-emerald-700">SofiNutri</span>
-          <span className="text-gray-400">|</span>
-          <span className="text-sm text-gray-500">Panel Admin</span>
+          <span className="text-xl font-display font-bold" style={{ color: '#687a77' }}>SofiNutri</span>
+          <span style={{ color: '#cbaca6' }}>|</span>
+          <span className="text-sm" style={{ color: '#9cad9f' }}>Painel Admin</span>
         </div>
         <form action={signOut}>
-          <button
-            type="submit"
-            className="text-sm text-gray-500 hover:text-red-500 transition"
-          >
-            Cerrar sesión
+          <button type="submit" className="text-sm transition hover:opacity-70" style={{ color: '#cbaca6' }}>
+            Sair
           </button>
         </form>
       </header>

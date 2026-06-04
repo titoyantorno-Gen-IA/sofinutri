@@ -24,52 +24,58 @@ export default function NuevoPacienteForm() {
       {!open ? (
         <button
           onClick={() => setOpen(true)}
-          className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-5 py-2.5 rounded-lg transition"
+          className="text-white font-semibold px-5 py-2.5 rounded-lg transition hover:opacity-90"
+          style={{ background: '#b46d41' }}
         >
-          + Nuevo paciente
+          + Novo paciente
         </button>
       ) : (
-        <div className="bg-white border border-gray-200 rounded-xl p-6 max-w-lg">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Nuevo paciente</h2>
+        <div className="bg-white rounded-xl p-6 max-w-lg" style={{ border: '1px solid #cbaca6' }}>
+          <h2 className="text-lg font-display font-semibold mb-4" style={{ color: '#687a77' }}>Novo paciente</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Nombre *</label>
+                <label className="block text-sm font-medium mb-1" style={{ color: '#687a77' }}>Nome *</label>
                 <input
                   name="nombre"
                   required
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2"
+                  style={{ borderColor: '#cbaca6' }}
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Apellido *</label>
+                <label className="block text-sm font-medium mb-1" style={{ color: '#687a77' }}>Sobrenome *</label>
                 <input
                   name="apellido"
                   required
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2"
+                  style={{ borderColor: '#cbaca6' }}
                 />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Deporte (opcional)</label>
+              <label className="block text-sm font-medium mb-1" style={{ color: '#687a77' }}>Esporte (opcional)</label>
               <input
                 name="deporte"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                placeholder="Ej: Fútbol, Atletismo..."
+                className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2"
+                style={{ borderColor: '#cbaca6' }}
+                placeholder="Ex: Futebol, Atletismo..."
               />
             </div>
             <div className="flex gap-3 pt-2">
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-5 py-2 rounded-lg transition disabled:opacity-50"
+                className="text-white font-semibold px-5 py-2 rounded-lg transition disabled:opacity-50 hover:opacity-90"
+                style={{ background: '#b46d41' }}
               >
-                {loading ? 'Creando...' : 'Crear paciente'}
+                {loading ? 'Criando...' : 'Criar paciente'}
               </button>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="text-gray-500 hover:text-gray-700 px-4 py-2"
+                className="px-4 py-2 text-sm hover:opacity-70"
+                style={{ color: '#9cad9f' }}
               >
                 Cancelar
               </button>

@@ -19,57 +19,57 @@ export default function AccesoPacientePage() {
     const paciente = await validarPaciente(codigo, nombre)
 
     if (!paciente) {
-      setError('Código o nombre incorrecto. Verificá con tu nutricionista.')
+      setError('Código ou nome incorreto. Verifique com sua nutricionista.')
       setLoading(false)
       return
     }
 
-    // Guardar en sessionStorage para la sesión
     sessionStorage.setItem('paciente', JSON.stringify(paciente))
     router.push(`/paciente/${paciente.id}`)
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4" style={{ background: '#f5f0eb' }}>
       <div className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-emerald-700">SofiNutri</h1>
-          <p className="text-gray-500 mt-1">Ingresá con tu código personal</p>
+          <h1 className="text-3xl font-display font-bold" style={{ color: '#687a77' }}>SofiNutri</h1>
+          <p className="mt-1 text-sm" style={{ color: '#cbaca6' }}>Entre com seu código pessoal</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Tu código</label>
+            <label className="block text-sm font-medium mb-1" style={{ color: '#687a77' }}>Seu código</label>
             <input
               type="text"
               value={codigo}
               onChange={(e) => setCodigo(e.target.value.toUpperCase())}
               required
-              placeholder="Ej: MAGO-1234"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-mono tracking-widest text-center text-lg uppercase"
+              placeholder="Ex: MAGO-1234"
+              className="w-full border rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 font-mono tracking-widest text-center text-lg uppercase"
+              style={{ borderColor: '#cbaca6' }}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Tu nombre</label>
+            <label className="block text-sm font-medium mb-1" style={{ color: '#687a77' }}>Seu nome</label>
             <input
               type="text"
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
               required
-              placeholder="Ej: Martín"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              placeholder="Ex: Martina"
+              className="w-full border rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2"
+              style={{ borderColor: '#cbaca6' }}
             />
           </div>
 
-          {error && (
-            <p className="text-red-500 text-sm text-center">{error}</p>
-          )}
+          {error && <p className="text-sm text-center" style={{ color: '#b66565' }}>{error}</p>}
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 rounded-lg transition disabled:opacity-50"
+            className="w-full text-white font-semibold py-2.5 rounded-lg transition disabled:opacity-50"
+            style={{ background: '#b46d41' }}
           >
             {loading ? 'Verificando...' : 'Entrar'}
           </button>
